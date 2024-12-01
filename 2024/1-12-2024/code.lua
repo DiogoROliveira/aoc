@@ -30,8 +30,14 @@ end
 local leftSortedList = Sort(leftList)
 local rightSortedList = Sort(rightList)
 
+function Tablelength(T)
+    local count = 0
+    for _ in pairs(T) do count = count + 1 end
+    return count
+end
+
 function Part1(list1, list2)
-    local length = table.getn(list1)
+    local length = Tablelength(list1)
     local count = 0
 
     for i = 1, length do
@@ -47,7 +53,7 @@ print(total)
 -- Part 2 --
 
 function Part2(leftL, rightL)
-    local length = table.getn(leftL)
+    local length = Tablelength(leftL)
     local count = 0
 
     for i = 1, length do
